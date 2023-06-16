@@ -149,7 +149,7 @@ telemetry:
       labels: {}
 
 # -- The unix socket path to the spire-agent
-socketPath: /run/spire/agent-sockets/spire-agent.sock
+socketPath: /tmp/spire-agent/private/api.sock
 
 # -- Priority class assigned to daemonset pods
 priorityClassName: ""
