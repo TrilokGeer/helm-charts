@@ -1,5 +1,22 @@
 {{- if eq (.Values.global.openshift | toString) "true" }}
 
+kind: SecurityContextConstraints
+metadata:
+  name: {{ include "spire-agent.fullname" . }}
+readOnlyRootFilesystem: true
+runAsUser:
+  type: RunAsAny
+seLinuxContext:
+  type: RunAsAny
+supplementalGroups:
+  type: RunAsAny
+users:
+- system:serviceaccount:{{ include "spire-agent.namespace" . }}:{{ include "spire-agent.serviceAccountName" . }}
+volumes:
+- configMap
+- hostPath
+- projected
+- secret
 allowHostDirVolumePlugin: true
 allowHostIPC: true
 allowHostNetwork: true
@@ -11,22 +28,5 @@ apiVersion: security.openshift.io/v1
 fsGroup:
   type: RunAsAny
 groups: []
-kind: SecurityContextConstraints
-metadata:
-  name: scc-spire-agent
-readOnlyRootFilesystem: true
-runAsUser:
-  type: RunAsAny
-seLinuxContext:
-  type: RunAsAny
-supplementalGroups:
-  type: RunAsAny
-users:
-- system:serviceaccount:spire-system:spire-agent
-volumes:
-- configMap
-- hostPath
-- projected
-- secret
 
 {{ end }}
