@@ -98,19 +98,9 @@ spiffe-oidc-discovery-provider:
     additionalDomains: []
   insecureScheme:
     enabled: true
-  podSecurityContext:
-    # runAsUser: 1000
-    # runAsGroup: 1000
-    # fsGroup: 1000
-    fsGroupChangePolicy: OnRootMismatch
   securityContext:
-    allowPrivilegeEscalation: false
-    runAsNonRoot: true
     readOnlyRootFilesystem: true
-    capabilities:
-      drop: [ALL]
-    seccompProfile:
-      type: RuntimeDefault
+    privileged: true
 
 tornjak-frontend:
   podSecurityContext:
