@@ -1,4 +1,5 @@
 global:
+  openshift: true
   telemetry:
     prometheus:
       enabled: true
