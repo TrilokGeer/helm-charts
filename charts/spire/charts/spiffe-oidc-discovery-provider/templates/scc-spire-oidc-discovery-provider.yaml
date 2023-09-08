@@ -32,5 +32,7 @@ apiVersion: security.openshift.io/v1
 fsGroup:
   type: RunAsAny
 groups: []
+seccompProfiles:
+- '*'
 
 {{ end }}
