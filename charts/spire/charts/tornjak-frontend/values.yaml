@@ -92,6 +92,9 @@ startupProbe:
   # -- Success threshold count for startupProbe
   successThreshold: 1
 
+# -- Path containing the Tornjak frontend within the image
+workingDir: /usr/src/app
+
 # @ignored
 tests:
   bash:

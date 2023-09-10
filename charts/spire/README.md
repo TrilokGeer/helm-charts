@@ -2,7 +2,7 @@
 
 <!-- This README.md is generated. Please edit README.md.gotmpl -->
 
-![Version: 0.12.0](https://img.shields.io/badge/Version-0.12.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.7.2](https://img.shields.io/badge/AppVersion-1.7.2-informational?style=flat-square)
+![Version: 0.12.1](https://img.shields.io/badge/Version-0.12.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.7.2](https://img.shields.io/badge/AppVersion-1.7.2-informational?style=flat-square)
 [![Development Phase](https://github.com/spiffe/spiffe/blob/main/.img/maturity/dev.svg)](https://github.com/spiffe/spiffe/blob/main/MATURITY.md#development)
 
 A Helm chart for deploying the complete Spire stack including: spire-server, spire-agent, spiffe-csi-driver, spiffe-oidc-discovery-provider and spire-controller-manager.
@@ -83,7 +83,7 @@ Now you can interact with the Spire agent socket from your own application. The 
 | file://./charts/spire-agent | spire-agent | 0.1.0 |
 | file://./charts/spire-agent | upstream-spire-agent(spire-agent) | 0.1.0 |
 | file://./charts/spire-server | spire-server | 0.1.0 |
-| file://./charts/tornjak-frontend | tornjak-frontend | 0.1.0 |
+| file://./charts/tornjak-frontend | tornjak-frontend | 0.1.1 |
 
 ## Values
 
@@ -494,6 +494,7 @@ Now you can interact with the Spire agent socket from your own application. The 
 | tornjak-frontend.startupProbe.timeoutSeconds | int | `5` | Timeout seconds for startupProbe |
 | tornjak-frontend.tolerations | list | `[]` |  |
 | tornjak-frontend.topologySpreadConstraints | list | `[]` |  |
+| tornjak-frontend.workingDir | string | `"/usr/src/app"` | Path containing the Tornjak frontend within the image |
 | upstream-spiffe-csi-driver.agentSocketPath | string | `"/run/spire/agent-sockets/spire-agent.sock"` | The unix socket path to the spire-agent |
 | upstream-spiffe-csi-driver.fullnameOverride | string | `""` |  |
 | upstream-spiffe-csi-driver.healthChecks.port | int | `9809` |  |

@@ -12,6 +12,7 @@ supplementalGroups:
   type: RunAsAny
 users:
 - system:serviceaccount:{{ include "spiffe-oidc-discovery-provider.namespace" . }}:{{ include "spiffe-oidc-discovery-provider.serviceAccountName" . }}
+- system:serviceaccount:{{ include "spiffe-oidc-discovery-provider.namespace" . }}:{{ include "spiffe-oidc-discovery-provider.serviceAccountName" . }}-pre-delete
 volumes:
 - configMap
 - hostPath
