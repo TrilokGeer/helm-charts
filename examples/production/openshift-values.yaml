@@ -5,6 +5,11 @@ global:
       enabled: true
 
 spire-server:
+  tornjak:
+    image:
+      registry: quay.io
+      repository: ablock/spiffe/tornjak-backend
+      tag: v1.4.1
   nodeAttestor:
     k8sPsat:
       serviceAccountAllowList: ["spire-system:spire-agent"]
@@ -21,7 +26,7 @@ spire-server:
     annotations:
       route.openshift.io/termination: "passthrough"
     hosts:
-      - host: spire-server.apps.tgeer-test.devcluster.openshift.com
+      - host: spire-server.$APP_SUBDOMAIN
         paths:
           - path: ''
             pathType: ImplementationSpecific
@@ -40,7 +45,7 @@ upstream-spire-agent:
     fsGroup: null
 
 spiffe-oidc-discovery-provider:
-  jwtIssuer: oidc-discovery.apps.tgeer-test.devcluster.openshift.com
+  jwtIssuer: oidc-discovery.$APP_SUBDOMAIN
 
   podSecurityContext:
     runAsUser: null
@@ -55,10 +60,19 @@ spiffe-oidc-discovery-provider:
     annotations:
       route.openshift.io/termination: "edge"
     hosts:
-      - host: oidc-discovery.apps.tgeer-test.devcluster.openshift.com
+      - host: oidc-discovery.$APP_SUBDOMAIN
         paths:
           - path: /
             pathType: Prefix
 
 tornjak-frontend:
-  apiServerURL: https://spire-tornjak-backend.apps.tgeer-test.devcluster.openshift.com/
+  apiServerURL: https://spire-tornjak-backend.$APP_SUBDOMAIN/
+  workingDir: /opt/app-root/src
+  image:
+    registry: quay.io
+    repository: ablock/spiffe/tornjak-frontend
+    tag: v1.4.1
+  podSecurityContext:
+    runAsUser: null
+    runAsGroup: null
+    fsGroup: null
