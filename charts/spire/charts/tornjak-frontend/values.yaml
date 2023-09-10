@@ -113,6 +113,9 @@ startupProbe:
   failureThreshold: 6
   successThreshold: 1
 
+# -- Path containing the Tornjak frontend within the image
+workingDir: /usr/src/app
+
 tests:
   bash:
     ## @param tests.bash.image.registry The OCI registry to pull the image from

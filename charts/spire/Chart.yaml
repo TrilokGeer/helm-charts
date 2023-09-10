@@ -51,7 +51,7 @@ dependencies:
   - name: tornjak-frontend
     condition: tornjak-frontend.enabled
     repository: file://./charts/tornjak-frontend
-    version: 0.1.0
+    version: 0.1.1
 annotations:
   artifacthub.io/category: security
   artifacthub.io/license: Apache-2.0
