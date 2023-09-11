@@ -12,6 +12,15 @@ spire-server:
       registry: quay.io
       repository: ablock/spiffe/tornjak-backend
       tag: v1.4.1
+    ingress:
+      enabled: true
+      annotations:
+        route.openshift.io/termination: "edge"
+      hosts:
+        - host: spire-tornjak-backend.$APP_SUBDOMAIN
+          paths:
+            - path: /
+              pathType: Prefix
   nodeAttestor:
     k8sPsat:
       serviceAccountAllowList: ["spire-system:spire-agent"]
@@ -73,6 +82,15 @@ tornjak-frontend:
     registry: quay.io
     repository: ablock/spiffe/tornjak-frontend
     tag: v1.4.1
+  ingress:
+    enabled: true
+    annotations:
+      route.openshift.io/termination: "edge"
+    hosts:
+      - host: spire-tornjak.$APP_SUBDOMAIN
+        paths:
+          - path: /
+            pathType: Prefix
   podSecurityContext:
     runAsUser: null
     runAsGroup: null
