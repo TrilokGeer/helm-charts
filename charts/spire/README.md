@@ -425,6 +425,14 @@ Now you can interact with the Spire agent socket from your own application. The 
 | spire-server.tornjak.image.repository | string | `"spiffe/tornjak-backend"` | The repository within the registry |
 | spire-server.tornjak.image.tag | string | `"v1.2.2"` | Overrides the image tag |
 | spire-server.tornjak.image.version | string | `""` | This value is deprecated in favor of tag. (Will be removed in a future release) |
+| spire-server.tornjak.ingress.annotations | object | `{}` |  |
+| spire-server.tornjak.ingress.className | string | `""` |  |
+| spire-server.tornjak.ingress.enabled | bool | `false` |  |
+| spire-server.tornjak.ingress.hosts[0].host | string | `"tornjak-backend.example.org"` |  |
+| spire-server.tornjak.ingress.hosts[0].paths[0].path | string | `"/"` |  |
+| spire-server.tornjak.ingress.hosts[0].paths[0].pathType | string | `"Prefix"` |  |
+| spire-server.tornjak.ingress.servicePort | int | `10000` |  |
+| spire-server.tornjak.ingress.tls | list | `[]` |  |
 | spire-server.tornjak.resources | object | `{}` |  |
 | spire-server.tornjak.service.annotations | object | `{}` |  |
 | spire-server.tornjak.service.ports | object | `{"http":10000,"https":10443}` | Ports for tornjak |
@@ -473,6 +481,13 @@ Now you can interact with the Spire agent socket from your own application. The 
 | tornjak-frontend.image.tag | string | `""` | Overrides the image tag whose default is the chart appVersion. |
 | tornjak-frontend.image.version | string | `""` | This value is deprecated in favor of tag. (Will be removed in a future release) |
 | tornjak-frontend.imagePullSecrets | list | `[]` |  |
+| tornjak-frontend.ingress.annotations | object | `{}` |  |
+| tornjak-frontend.ingress.className | string | `""` |  |
+| tornjak-frontend.ingress.enabled | bool | `false` |  |
+| tornjak-frontend.ingress.hosts[0].host | string | `"tornjak-frontend.example.org"` |  |
+| tornjak-frontend.ingress.hosts[0].paths[0].path | string | `"/"` |  |
+| tornjak-frontend.ingress.hosts[0].paths[0].pathType | string | `"Prefix"` |  |
+| tornjak-frontend.ingress.tls | list | `[]` |  |
 | tornjak-frontend.labels | object | `{}` |  |
 | tornjak-frontend.nameOverride | string | `""` |  |
 | tornjak-frontend.namespaceOverride | string | `""` |  |

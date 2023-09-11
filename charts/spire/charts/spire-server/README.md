@@ -228,6 +228,14 @@ In order to run Tornjak with simple HTTP Connection only, make sure you don't cr
 | tornjak.image.repository | string | `"spiffe/tornjak-backend"` | The repository within the registry |
 | tornjak.image.tag | string | `"v1.2.2"` | Overrides the image tag |
 | tornjak.image.version | string | `""` | This value is deprecated in favor of tag. (Will be removed in a future release) |
+| tornjak.ingress.annotations | object | `{}` |  |
+| tornjak.ingress.className | string | `""` |  |
+| tornjak.ingress.enabled | bool | `false` |  |
+| tornjak.ingress.hosts[0].host | string | `"tornjak-backend.example.org"` |  |
+| tornjak.ingress.hosts[0].paths[0].path | string | `"/"` |  |
+| tornjak.ingress.hosts[0].paths[0].pathType | string | `"Prefix"` |  |
+| tornjak.ingress.servicePort | int | `10000` |  |
+| tornjak.ingress.tls | list | `[]` |  |
 | tornjak.resources | object | `{}` |  |
 | tornjak.service.annotations | object | `{}` |  |
 | tornjak.service.ports | object | `{"http":10000,"https":10443}` | Ports for tornjak |
