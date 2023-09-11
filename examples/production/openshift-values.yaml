@@ -1,5 +1,7 @@
 global:
   openshift: true
+  spire:
+    jwtIssuer: oidc-discovery.$APP_SUBDOMAIN
   telemetry:
     prometheus:
       enabled: true
@@ -45,7 +47,6 @@ upstream-spire-agent:
     fsGroup: null
 
 spiffe-oidc-discovery-provider:
-  jwtIssuer: oidc-discovery.$APP_SUBDOMAIN
 
   podSecurityContext:
     runAsUser: null
