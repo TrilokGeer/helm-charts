@@ -2,7 +2,7 @@
 
 <!-- This README.md is generated. Please edit README.md.gotmpl -->
 
-![Version: 0.1.0](https://img.shields.io/badge/Version-0.1.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v1.2.2](https://img.shields.io/badge/AppVersion-v1.2.2-informational?style=flat-square)
+![Version: 0.1.1](https://img.shields.io/badge/Version-0.1.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v1.2.2](https://img.shields.io/badge/AppVersion-v1.2.2-informational?style=flat-square)
 [![Development Phase](https://github.com/spiffe/spiffe/blob/main/.img/maturity/dev.svg)](https://github.com/spiffe/spiffe/blob/main/MATURITY.md#development)
 
 A Helm chart to deploy Tornjak frontend
@@ -65,6 +65,13 @@ port forwarding. See the chart NOTES output for more details.
 | image.tag | string | `""` | Overrides the image tag whose default is the chart appVersion. |
 | image.version | string | `""` | This value is deprecated in favor of tag. (Will be removed in a future release) |
 | imagePullSecrets | list | `[]` |  |
+| ingress.annotations | object | `{}` |  |
+| ingress.className | string | `""` |  |
+| ingress.enabled | bool | `false` |  |
+| ingress.hosts[0].host | string | `"tornjak-frontend.example.org"` |  |
+| ingress.hosts[0].paths[0].path | string | `"/"` |  |
+| ingress.hosts[0].paths[0].pathType | string | `"Prefix"` |  |
+| ingress.tls | list | `[]` |  |
 | labels | object | `{}` |  |
 | nameOverride | string | `""` |  |
 | namespaceOverride | string | `""` |  |
@@ -86,4 +93,5 @@ port forwarding. See the chart NOTES output for more details.
 | startupProbe.timeoutSeconds | int | `5` | Timeout seconds for startupProbe |
 | tolerations | list | `[]` |  |
 | topologySpreadConstraints | list | `[]` |  |
+| workingDir | string | `"/usr/src/app"` | Path containing the Tornjak frontend within the image |
 ----------------------------------------------
