@@ -117,6 +117,7 @@ Now you can interact with the Spire agent socket from your own application. The 
 | upstream-spire-agent.telemetry.prometheus.port | int | `9989` |  |
 | upstream.enabled | bool | `false` | enable upstream agent and driver for use with nested spire. |
 | spiffe-csi-driver.agentSocketPath | string | `"/run/spire/agent-sockets/spire-agent.sock"` | The unix socket path to the spire-agent |
+| spiffe-csi-driver.csiDriverLabels | object | `{}` | Labels to apply to the CSIDriver |
 | spiffe-csi-driver.fullnameOverride | string | `""` |  |
 | spiffe-csi-driver.healthChecks.port | int | `9809` |  |
 | spiffe-csi-driver.image.pullPolicy | string | `"IfNotPresent"` | The image pull policy |
@@ -125,6 +126,7 @@ Now you can interact with the Spire agent socket from your own application. The 
 | spiffe-csi-driver.image.tag | string | `""` | Overrides the image tag whose default is the chart appVersion |
 | spiffe-csi-driver.image.version | string | `""` | This value is deprecated in favor of tag. (Will be removed in a future release) |
 | spiffe-csi-driver.imagePullSecrets | list | `[]` |  |
+| spiffe-csi-driver.initContainers | list | `[]` | Init Containers to apply to the CSI Driver DaemonSet |
 | spiffe-csi-driver.kubeletPath | string | `"/var/lib/kubelet"` |  |
 | spiffe-csi-driver.livenessProbe.initialDelaySeconds | int | `5` | Initial delay seconds for livenessProbe |
 | spiffe-csi-driver.livenessProbe.timeoutSeconds | int | `5` | Timeout value in seconds for livenessProbe |
@@ -511,6 +513,7 @@ Now you can interact with the Spire agent socket from your own application. The 
 | tornjak-frontend.topologySpreadConstraints | list | `[]` |  |
 | tornjak-frontend.workingDir | string | `"/usr/src/app"` | Path containing the Tornjak frontend within the image |
 | upstream-spiffe-csi-driver.agentSocketPath | string | `"/run/spire/agent-sockets/spire-agent.sock"` | The unix socket path to the spire-agent |
+| upstream-spiffe-csi-driver.csiDriverLabels | object | `{}` | Labels to apply to the CSIDriver |
 | upstream-spiffe-csi-driver.fullnameOverride | string | `""` |  |
 | upstream-spiffe-csi-driver.healthChecks.port | int | `9809` |  |
 | upstream-spiffe-csi-driver.image.pullPolicy | string | `"IfNotPresent"` | The image pull policy |
@@ -519,6 +522,7 @@ Now you can interact with the Spire agent socket from your own application. The 
 | upstream-spiffe-csi-driver.image.tag | string | `""` | Overrides the image tag whose default is the chart appVersion |
 | upstream-spiffe-csi-driver.image.version | string | `""` | This value is deprecated in favor of tag. (Will be removed in a future release) |
 | upstream-spiffe-csi-driver.imagePullSecrets | list | `[]` |  |
+| upstream-spiffe-csi-driver.initContainers | list | `[]` | Init Containers to apply to the CSI Driver DaemonSet |
 | upstream-spiffe-csi-driver.kubeletPath | string | `"/var/lib/kubelet"` |  |
 | upstream-spiffe-csi-driver.livenessProbe.initialDelaySeconds | int | `5` | Initial delay seconds for livenessProbe |
 | upstream-spiffe-csi-driver.livenessProbe.timeoutSeconds | int | `5` | Timeout value in seconds for livenessProbe |
