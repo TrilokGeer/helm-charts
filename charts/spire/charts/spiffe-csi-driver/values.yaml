@@ -58,6 +58,12 @@ namespaceOverride: ""
 ## @param fullnameOverride Full name override for spiffe-csi-driver
 fullnameOverride: ""
 
+# -- Labels to apply to the CSIDriver
+csiDriverLabels: {}
+
+# -- Init Containers to apply to the CSI Driver DaemonSet
+initContainers: []
+
 ## @param serviceAccount.create Specifies whether a service account should be created
 ## @param serviceAccount.annotations Annotations to add to the service account
 ## @param serviceAccount.name The name of the service account to use. If not set and create is true, a name is generated.

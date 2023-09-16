@@ -27,7 +27,6 @@ A Helm chart to install the SPIFFE CSI driver.
 ## Parameters
 
 ### SPIFFE CSI Driver Chart parameters
-
 | Name                                     | Description                                                                                 | Value                                       |
 | ---------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------- |
 | `pluginName`                             | Set the csi driver name deployed to Kubernetes.                                             | `csi.spiffe.io`                             |
