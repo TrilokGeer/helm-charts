@@ -29,6 +29,7 @@ A Helm chart to install the SPIFFE CSI driver.
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
 | agentSocketPath | string | `"/run/spire/agent-sockets/spire-agent.sock"` | The unix socket path to the spire-agent |
+| csiDriverLabels | object | `{}` | Labels to apply to the CSIDriver |
 | fullnameOverride | string | `""` |  |
 | healthChecks.port | int | `9809` |  |
 | image.pullPolicy | string | `"IfNotPresent"` | The image pull policy |
@@ -37,6 +38,7 @@ A Helm chart to install the SPIFFE CSI driver.
 | image.tag | string | `""` | Overrides the image tag whose default is the chart appVersion |
 | image.version | string | `""` | This value is deprecated in favor of tag. (Will be removed in a future release) |
 | imagePullSecrets | list | `[]` |  |
+| initContainers | list | `[]` | Init Containers to apply to the CSI Driver DaemonSet |
 | kubeletPath | string | `"/var/lib/kubelet"` |  |
 | livenessProbe.initialDelaySeconds | int | `5` | Initial delay seconds for livenessProbe |
 | livenessProbe.timeoutSeconds | int | `5` | Timeout value in seconds for livenessProbe |

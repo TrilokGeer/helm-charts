@@ -41,6 +41,12 @@ nameOverride: ""
 namespaceOverride: ""
 fullnameOverride: ""
 
+# -- Labels to apply to the CSIDriver
+csiDriverLabels: {}
+
+# -- Init Containers to apply to the CSI Driver DaemonSet
+initContainers: []
+
 serviceAccount:
   # -- Specifies whether a service account should be created
   create: true
