@@ -1,7 +1,7 @@
 global:
   openshift: true
   spire:
-    jwtIssuer: oidc-discovery.$APP_SUBDOMAIN
+    jwtIssuer: https://oidc-discovery.$APP_SUBDOMAIN
   telemetry:
     prometheus:
       enabled: true
