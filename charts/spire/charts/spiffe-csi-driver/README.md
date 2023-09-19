@@ -56,6 +56,9 @@ A Helm chart to install the SPIFFE CSI driver.
 | podSecurityContext | object | `{}` |  |
 | priorityClassName | string | `""` | Priority class assigned to daemonset pods |
 | resources | object | `{}` |  |
+| restrictedScc.enabled | bool | `false` | Enables the creation of a SecurityContextConstraint based on the restricted SCC with CSI volume support |
+| restrictedScc.name | string | `""` | Set the name of the restricted SCC with CSI support |
+| restrictedScc.v2 | bool | `true` | Based up on v2 version of the restricted SCC |
 | securityContext.privileged | bool | `true` |  |
 | securityContext.readOnlyRootFilesystem | bool | `true` |  |
 | serviceAccount.annotations | object | `{}` | Annotations to add to the service account |

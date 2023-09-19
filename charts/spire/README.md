@@ -144,6 +144,9 @@ Now you can interact with the Spire agent socket from your own application. The 
 | spiffe-csi-driver.podSecurityContext | object | `{}` |  |
 | spiffe-csi-driver.priorityClassName | string | `""` | Priority class assigned to daemonset pods |
 | spiffe-csi-driver.resources | object | `{}` |  |
+| spiffe-csi-driver.restrictedScc.enabled | bool | `false` | Enables the creation of a SecurityContextConstraint based on the restricted SCC with CSI volume support |
+| spiffe-csi-driver.restrictedScc.name | string | `""` | Set the name of the restricted SCC with CSI support |
+| spiffe-csi-driver.restrictedScc.v2 | bool | `true` | Based up on v2 version of the restricted SCC |
 | spiffe-csi-driver.securityContext.privileged | bool | `true` |  |
 | spiffe-csi-driver.securityContext.readOnlyRootFilesystem | bool | `true` |  |
 | spiffe-csi-driver.serviceAccount.annotations | object | `{}` | Annotations to add to the service account |
@@ -540,6 +543,9 @@ Now you can interact with the Spire agent socket from your own application. The 
 | upstream-spiffe-csi-driver.podSecurityContext | object | `{}` |  |
 | upstream-spiffe-csi-driver.priorityClassName | string | `""` | Priority class assigned to daemonset pods |
 | upstream-spiffe-csi-driver.resources | object | `{}` |  |
+| upstream-spiffe-csi-driver.restrictedScc.enabled | bool | `false` | Enables the creation of a SecurityContextConstraint based on the restricted SCC with CSI volume support |
+| upstream-spiffe-csi-driver.restrictedScc.name | string | `""` | Set the name of the restricted SCC with CSI support |
+| upstream-spiffe-csi-driver.restrictedScc.v2 | bool | `true` | Based up on v2 version of the restricted SCC |
 | upstream-spiffe-csi-driver.securityContext.privileged | bool | `true` |  |
 | upstream-spiffe-csi-driver.securityContext.readOnlyRootFilesystem | bool | `true` |  |
 | upstream-spiffe-csi-driver.serviceAccount.annotations | object | `{}` | Annotations to add to the service account |
