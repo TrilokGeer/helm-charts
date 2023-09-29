@@ -9,9 +9,9 @@ global:
 spire-server:
   tornjak:
     image:
-      registry: quay.io
-      repository: ablock/spiffe/tornjak-backend
-      tag: v1.4.1
+      registry: ghcr.io
+      repository: spiffe/tornjak-backend
+      tag: ubi-v1.4.1
     ingress:
       enabled: true
       annotations:
@@ -79,9 +79,9 @@ tornjak-frontend:
   apiServerURL: https://spire-tornjak-backend.$APP_SUBDOMAIN/
   workingDir: /opt/app-root/src
   image:
-    registry: quay.io
-    repository: ablock/spiffe/tornjak-frontend
-    tag: v1.4.1
+    registry: ghcr.io
+    repository: spiffe/tornjak-frontend
+    tag: ubi-v1.4.1
   ingress:
     enabled: true
     annotations:
