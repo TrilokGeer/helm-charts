@@ -24,8 +24,8 @@ seLinuxContext:
 supplementalGroups:
   type: RunAsAny
 users:
-- system:serviceaccount:spire-system:spire-spiffe-csi-driver
+  - system:serviceaccount:spire-system:spire-spiffe-csi-driver
 volumes:
-- configmap
-- hostPath
-- secret
+  - configmap
+  - hostPath
+  - secret
