@@ -1,3 +1,5 @@
+apiVersion: security.openshift.io/v1
+kind: SecurityContextConstraints
 allowHostDirVolumePlugin: true
 allowHostIPC: false
 allowHostNetwork: false
@@ -6,18 +8,12 @@ allowHostPorts: false
 allowPrivilegeEscalation: true
 allowPrivilegedContainer: true
 allowedCapabilities: null
-apiVersion: security.openshift.io/v1
 defaultAddCapabilities: null
 fsGroup:
   type: RunAsAny
 groups: []
-kind: SecurityContextConstraints
 metadata:
-  creationTimestamp: "2023-08-29T16:46:24Z"
-  generation: 16
   name: scc-spire
-  resourceVersion: "387439"
-  uid: db98beb8-2082-405c-8915-6c697891e46d
 priority: null
 readOnlyRootFilesystem: true
 requiredDropCapabilities: null

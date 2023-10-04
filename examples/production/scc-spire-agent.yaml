@@ -1,3 +1,5 @@
+apiVersion: security.openshift.io/v1
+kind: SecurityContextConstraints
 allowHostDirVolumePlugin: true
 allowHostIPC: true
 allowHostNetwork: true
@@ -6,18 +8,12 @@ allowHostPorts: true
 allowPrivilegeEscalation: true
 allowPrivilegedContainer: true
 allowedCapabilities: null
-apiVersion: security.openshift.io/v1
 defaultAddCapabilities: null
 fsGroup:
   type: RunAsAny
 groups: []
-kind: SecurityContextConstraints
 metadata:
-  creationTimestamp: "2023-08-29T18:18:03Z"
-  generation: 11
   name: scc-spire-agent
-  resourceVersion: "391411"
-  uid: bec548db-1a88-4690-9761-35ffb75464d1
 priority: null
 readOnlyRootFilesystem: true
 requiredDropCapabilities: null

@@ -1,5 +1,5 @@
 {{- if eq (.Values.global.openshift | toString) "true" }}
-
+apiVersion: security.openshift.io/v1
 kind: SecurityContextConstraints
 metadata:
   name: {{ include "spiffe-csi-driver.fullname" . }}
@@ -23,7 +23,6 @@ allowHostPID: false
 allowHostPorts: false
 allowPrivilegeEscalation: true
 allowPrivilegedContainer: true
-apiVersion: security.openshift.io/v1
 fsGroup:
   type: RunAsAny
 groups: []

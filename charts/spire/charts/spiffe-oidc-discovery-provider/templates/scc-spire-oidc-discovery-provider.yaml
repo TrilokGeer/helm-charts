@@ -1,5 +1,5 @@
 {{- if eq (.Values.global.openshift | toString) "true" }}
-
+apiVersion: security.openshift.io/v1
 kind: SecurityContextConstraints
 metadata:
   name: {{ include "spiffe-oidc-discovery-provider.fullname" . }}
@@ -29,7 +29,6 @@ allowHostPID: true
 allowHostPorts: true
 allowPrivilegeEscalation: true
 allowPrivilegedContainer: true
-apiVersion: security.openshift.io/v1
 fsGroup:
   type: RunAsAny
 groups: []
