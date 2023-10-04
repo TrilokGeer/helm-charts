@@ -28,12 +28,12 @@ seLinuxContext:
   type: MustRunAs
 readOnlyRootFilesystem: false
 metadata:
+  name: {{ $name }}
   annotations:
     kubernetes.io/description: >-
       {{ $name }} denies access to all host features and requires pods to be
       run with a UID, and SELinux context that are allocated to the namespace.
       {{ .Values.restrictedScc.v2 | ternary $v2Description "" }}
-  name: {{ $name }}
 fsGroup:
   type: MustRunAs
 groups: []
