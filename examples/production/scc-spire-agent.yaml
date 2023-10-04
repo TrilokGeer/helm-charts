@@ -24,9 +24,9 @@ seLinuxContext:
 supplementalGroups:
   type: RunAsAny
 users:
-- system:serviceaccount:spire-system:spire-agent
+  - system:serviceaccount:spire-system:spire-agent
 volumes:
-- configMap
-- hostPath
-- projected
-- secret
+  - configMap
+  - hostPath
+  - projected
+  - secret
