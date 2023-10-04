@@ -81,7 +81,7 @@ Now you can interact with the Spire agent socket from your own application. The 
 | file://./charts/spire-agent | spire-agent | 0.1.0 |
 | file://./charts/spire-agent | upstream-spire-agent(spire-agent) | 0.1.0 |
 | file://./charts/spire-server | spire-server | 0.1.0 |
-| file://./charts/tornjak-frontend | tornjak-frontend | 0.1.1 |
+| file://./charts/tornjak-frontend | tornjak-frontend | 0.1.0 |
 
 <!-- The parameters section is generated using helm-docs.sh and should not be edited by hand. -->
 
