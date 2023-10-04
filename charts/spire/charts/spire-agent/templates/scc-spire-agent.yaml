@@ -11,12 +11,12 @@ seLinuxContext:
 supplementalGroups:
   type: RunAsAny
 users:
-- system:serviceaccount:{{ include "spire-agent.namespace" . }}:{{ include "spire-agent.serviceAccountName" . }}
+  - system:serviceaccount:{{ include "spire-agent.namespace" . }}:{{ include "spire-agent.serviceAccountName" . }}
 volumes:
-- configMap
-- hostPath
-- projected
-- secret
+  - configMap
+  - hostPath
+  - projected
+  - secret
 allowHostDirVolumePlugin: true
 allowHostIPC: true
 allowHostNetwork: true
