@@ -33,6 +33,6 @@ fsGroup:
   type: RunAsAny
 groups: []
 seccompProfiles:
-- '*'
+  - '*'
 
 {{ end }}
