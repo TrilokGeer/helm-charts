@@ -13,9 +13,9 @@ supplementalGroups:
 users:
 - system:serviceaccount:{{ include "spiffe-csi-driver.namespace" . }}:{{ include "spiffe-csi-driver.serviceAccountName" . }}
 volumes:
-- configmap
-- hostPath
-- secret
+  - configmap
+  - hostPath
+  - secret
 allowHostDirVolumePlugin: true
 allowHostIPC: false
 allowHostNetwork: false
