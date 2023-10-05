@@ -11,7 +11,7 @@ seLinuxContext:
 supplementalGroups:
   type: RunAsAny
 users:
-- system:serviceaccount:{{ include "spiffe-csi-driver.namespace" . }}:{{ include "spiffe-csi-driver.serviceAccountName" . }}
+  - system:serviceaccount:{{ include "spiffe-csi-driver.namespace" . }}:{{ include "spiffe-csi-driver.serviceAccountName" . }}
 volumes:
   - configmap
   - hostPath
