@@ -64,3 +64,4 @@ A Helm chart to install the SPIFFE CSI driver.
 | `agentSocketPath`                        | The unix socket path to the spire-agent                                                     | `/run/spire/agent-sockets/spire-agent.sock` |
 | `kubeletPath`                            | Path to kubelet file                                                                        | `/var/lib/kubelet`                          |
 | `priorityClassName`                      | Priority class assigned to daemonset pods                                                   | `""`                                        |
+
