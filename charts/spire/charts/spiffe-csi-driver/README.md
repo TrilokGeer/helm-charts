@@ -27,6 +27,7 @@ A Helm chart to install the SPIFFE CSI driver.
 ## Parameters
 
 ### SPIFFE CSI Driver Chart parameters
+
 | Name                                     | Description                                                                                 | Value                                       |
 | ---------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------- |
 | `pluginName`                             | Set the csi driver name deployed to Kubernetes.                                             | `csi.spiffe.io`                             |
@@ -43,6 +44,8 @@ A Helm chart to install the SPIFFE CSI driver.
 | `nameOverride`                           | Name override for spiffe-csi-driver                                                         | `""`                                        |
 | `namespaceOverride`                      | Namespace to install spiffe-csi-driver                                                      | `""`                                        |
 | `fullnameOverride`                       | Full name override for spiffe-csi-driver                                                    | `""`                                        |
+| `csiDriverLabels`                        | Labels applicable to the CSIDriver                                                          | `{}`                                        |
+| `initContainers`                         | Init containers applicable to CSI Driver DaemonSet                                          | `[]`                                        |
 | `serviceAccount.create`                  | Specifies whether a service account should be created                                       | `true`                                      |
 | `serviceAccount.annotations`             | Annotations to add to the service account                                                   | `{}`                                        |
 | `serviceAccount.name`                    | The name of the service account to use. If not set and create is true, a name is generated. | `""`                                        |
