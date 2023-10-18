@@ -1,12 +1,18 @@
 global:
   openshift: true
   spire:
+    clusterName: production
+    trustDomain: $APP_SUBDOMAIN
     jwtIssuer: https://oidc-discovery.$APP_SUBDOMAIN
   telemetry:
     prometheus:
       enabled: true
 
 spire-server:
+  ca_subject:
+    country: US
+    organization: openshift
+    common_name: openshift-spire
   tornjak:
     image:
       registry: ghcr.io

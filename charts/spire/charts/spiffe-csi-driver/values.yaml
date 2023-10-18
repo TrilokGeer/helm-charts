@@ -132,3 +132,11 @@ kubeletPath: /var/lib/kubelet
 
 ## @param priorityClassName Priority class assigned to daemonset pods
 priorityClassName: ""
+
+restrictedScc:
+  # -- Enables the creation of a SecurityContextConstraint based on the restricted SCC with CSI volume support
+  enabled: false
+  # -- Set the name of the restricted SCC with CSI support
+  name: ""
+  # -- Based up on v2 version of the restricted SCC
+  v2: true
